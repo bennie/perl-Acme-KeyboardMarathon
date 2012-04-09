@@ -1,5 +1,14 @@
 #!/usr/bin/perl -Ilib
 
+=head2 marathon.pl
+
+Example usage of the ACME::KeyboardMarathon module. Just give it filename(s) on 
+the command line as arguments and it returns the total distance.
+
+  $> ./marathon.pl foo.txt bar.txt baz.txt
+
+=cut
+
 use ACME::KeyboardMarathon;
 use strict;
 
