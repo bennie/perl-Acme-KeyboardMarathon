@@ -90,7 +90,7 @@ ACME module, afterall. Send me a patch with the right math if you're bored.
 * A QWERTY keyboard is assume. DVORAK people are thus left out in the cold. 
 As they should be. The freaks.
 
-* I assume there is no gaps between your keys. This means all those stylish 
+* I assume there are no gaps between your keys. This means all those stylish 
 Mac keyboard folks are actually doing more work than they're credited for. 
 But I'm ok with that.
 
