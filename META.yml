@@ -1,0 +1,9 @@
+name:         Text-TabFile
+version:      VERSIONTAG
+version_from: lib/Tkx/Login.pm
+installdirs:  site
+requires:
+    Tkx:               1.00
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.21
