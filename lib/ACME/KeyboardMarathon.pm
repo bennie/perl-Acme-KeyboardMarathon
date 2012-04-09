@@ -87,7 +87,7 @@ and horizontal motion of the finger. The motion traversed is actually an
 arc, and while that calculation would be more accurate, this is an 
 ACME module, afterall. Send me a patch with the right math if you're bored.
 
-* A QWERTY keyboard is assume. DVORAK people are thusly left out in the cold. 
+* A QWERTY keyboard is assume. DVORAK people are thus left out in the cold. 
 As they should be. The freaks.
 
 * I assume there is no gaps between your keys. This means all those stylish 
@@ -109,7 +109,7 @@ using copy and paste from google. Right? RIGHT?!?!??
 * I'VE NEVER HEARD OF CAPS LOCK. YOU PRESSED THAT SHIFT KEY AND RETURNED TO 
 HOME ROW FOR EVERY CAPITAL LETTER!!1!!one!
 
-* I am a horrible Americal barbarian and have only bothered with the keys that
+* I am a horrible American barbarian and have only bothered with the keys that
 show up on my American barbarian keyboard. I'll add the LATIN-1 things with 
 diacritics later, so I can feel better while still ignoring UTF's existance.
 
