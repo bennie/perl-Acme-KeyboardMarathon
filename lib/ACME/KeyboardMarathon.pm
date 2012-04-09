@@ -46,7 +46,7 @@ sub distance {
   while ( my $chunk = shift @_ ) {
     die "FAR OUT! A REFRENCE: $chunk" if ref $chunk;
     for my $char ( split '', $chunk ) {
-      die "WHOAH! I DON'T KNOW WHAT THIS IS: [$char]\n" unless defined $self->{k}->{$char};
+      warn "WHOAH! I DON'T KNOW WHAT THIS IS: [$char]\n" and next unless defined $self->{k}->{$char};
       $distance += $self->{k}->{$char};
     }
   }
@@ -130,5 +130,5 @@ was less readable, in Perl.
 
   ACME::KeyboardMarathon vVERSIONTAG DATETAG
   
-  (c) 2012, Efrain Klein <efrain.klein@gmail.com > & Phillip Pollard <bennie@cpan.org>
+  (c) 2012, Efrain Klein <efrain.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
   Released under the Perl Artistic License
