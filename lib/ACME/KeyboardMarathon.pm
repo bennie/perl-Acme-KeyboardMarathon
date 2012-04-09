@@ -1,61 +1,32 @@
-$Tkx::Login::VERSION='VERSIONTAG';
+ACME::KeyboardMarathon::VERSION='VERSIONTAG';
 
-use Tkx;
 use strict;
 
-package Tkx::Login;
+package ACME::KeyboardMarathon;
 
-sub askpass {
-  my $interation = 0;
+sub new {
+  my $class = shift @_;
+  my $self = {};
+  bless($self,$class);
+  
+=head3
+#all measures in cm
+DEPRESS_CONSTANT = 0.25
+SHIFT_DISTANCE = 2
+SHIFTED_KEYS = '!@#$%^&*()_+<>?:"{}|~'
+FINGER_DISTANCES = (
+    (2, 'qwghertyuiopzxcvnm,<>./?\'"'),
+    (4, ']123478905i-_\n}!@#$%&*()'),
+    (0, 'asdfjkl;: '),
+    (4.5, '=+'),
+    (5, '6^`~'),
+    (2.3, '[{\t'),
+    (5.5, '\\|'),
+    (3.5, 'b')
+)
+=cut
 
-  my $mw = shift @_;
-  my $text = shift @_;
-  my $user = shift @_;
-  my $pass = shift @_;
-
-  my $original_user = $user;
-  my $original_pass = $pass;
-
-  my $win = $mw->new_toplevel();
-  $win->g_wm_title("Login");
-
-  $win->new_ttk__label(-text => $text )->g_grid( -columnspan => 2 ) if $text;
-
-  $win->new_ttk__label(-text => "Username:" )->g_grid( -stick=> 'e', -column => 0, -row => 1 );
-
-  my $name_entry = $win->new_ttk__entry(-textvariable => \$user);
-  $name_entry->g_grid( -column => 1, -row => 1 );
-
-  $win->new_ttk__label(-text => "Password:" )->g_grid( -sticky => 'e', -column => 0, -row => 2 );
- 
-  my $pass_entry = $win->new_ttk__entry(-textvariable => \$pass, -show => '*');
-  $pass_entry->g_grid( -column => 1, -row => 2 );
-
-  my $okcancel;
-
-  my $ok = $win->new_button(
-    -text => 'Ok',
-    -command => sub {
-       $okcancel = 'ok';
-       $interation++;
-       $win->g_destroy;
-    },
-  )->g_grid( -column => 0, -row => 3 );
-
-  my $cancel = $win->new_button(
-    -text => 'Cancel',
-    -command => sub {
-       $okcancel = 'cancel';
-       $interation++;
-       $win->g_destroy;
-    },
-  )->g_grid( -column => 1, -row => 3 );
-
-  while ( $interation < 1 ) {
-    Tkx::update();
-  }
-
-  return $okcancel eq 'ok' ? ( $user, $pass ) : ( $original_user, $original_pass );
+  return $self;
 }
 
 1;
