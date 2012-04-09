@@ -1,9 +1,5 @@
-Revision history for Perl extension Tkx::Login.
+Revision history for Perl extension ACME::KeyboardMarathon.
 
 VERSIONTAG  DATETAG
-
-	Added a "Cancel" button option.
-
-1.04  2012/03/28
 
 	Initial module creation.
