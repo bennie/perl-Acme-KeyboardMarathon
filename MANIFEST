@@ -1,5 +1,5 @@
 Changes
-lib/Tkx/Login.pm
+lib/ACME/KeyboardMarathon.pm
 Makefile.PL
 MANIFEST
 README

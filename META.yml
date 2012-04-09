@@ -1,9 +1,8 @@
-name:         Text-TabFile
+name:         ACME-KeyboardMarathon
 version:      VERSIONTAG
-version_from: lib/Tkx/Login.pm
+version_from: lib/ACME/LeyboardMarathon.pm
 installdirs:  site
 requires:
-    Tkx:               1.00
 
 distribution_type: module
 generated_by: ExtUtils::MakeMaker version 6.21
