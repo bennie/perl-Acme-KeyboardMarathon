@@ -6,6 +6,4 @@
 
 - Adjustments for hand-sizes affecting arcs.
 
-- Warn on bad chars. (don't die)
-
 - Handle references to avoid copying large amounts of data.

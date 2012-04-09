@@ -1,5 +1,9 @@
 Revision history for Perl extension ACME::KeyboardMarathon.
 
-VERSIONTAG  DATETAG
+1.07  2012/04/09
 
 	Initial module creation.
+
+VERSIONTAG  DATETAG
+
+	Now warning on bad characters. Not using die().
