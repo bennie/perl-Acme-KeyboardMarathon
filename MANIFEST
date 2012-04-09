@@ -4,4 +4,7 @@ Makefile.PL
 MANIFEST
 README
 t/01-load.t
+t/02-fox.t
+t/03-cursing.t
+marathon.pl
 META.yml
