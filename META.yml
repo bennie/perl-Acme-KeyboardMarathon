@@ -1,8 +1,8 @@
-name:         ACME-KeyboardMarathon
-version:      VERSIONTAG
+name: ACME-KeyboardMarathon
+abstract: How far have your fingers ran?
+author: Phil Pollard <bennie@cpan.org>
+version: VERSIONTAG
 version_from: lib/ACME/LeyboardMarathon.pm
-installdirs:  site
-requires:
-
+license: perl
 distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.21
+generated_by: Phil Pollard <bennie@cpan.org>
