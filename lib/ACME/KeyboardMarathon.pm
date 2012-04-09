@@ -1,4 +1,4 @@
-ACME::KeyboardMarathon::VERSION='VERSIONTAG';
+$ACME::KeyboardMarathon::VERSION='VERSIONTAG';
 
 use strict;
 
@@ -8,23 +8,34 @@ sub new {
   my $class = shift @_;
   my $self = {};
   bless($self,$class);
-  
-=head3
-#all measures in cm
-DEPRESS_CONSTANT = 0.25
-SHIFT_DISTANCE = 2
-SHIFTED_KEYS = '!@#$%^&*()_+<>?:"{}|~'
-FINGER_DISTANCES = (
-    (2, 'qwghertyuiopzxcvnm,<>./?\'"'),
-    (4, ']123478905i-_\n}!@#$%&*()'),
-    (0, 'asdfjkl;: '),
-    (4.5, '=+'),
-    (5, '6^`~'),
-    (2.3, '[{\t'),
-    (5.5, '\\|'),
-    (3.5, 'b')
-)
-=cut
+
+  # all measures in cm
+  my %keys;
+
+  my $DEPRESS_CONSTANT = 0.25;
+  my $SHIFT_DISTANCE = 2;
+
+  my %basic_distances = ( # basic distance traveled horizontally for a key
+       0   => 'asdfjkl;: ',
+       2   => 'qwghertyuiopzxcvnm,<>./?\'"',
+       4   => ']123478905i-_\n}!@#$%&*()',
+       4.5 => '=+',
+       2.3 => '[{\t',
+       3.5 => 'b',
+       5   => '6^`~',
+       5.5 => '\\|',
+  );
+
+  my %shifted; # lookup hash to see if a key is shifted
+  for my $key ( qw/!@#$%^&*()_+<>?:"{}|~'/, 'A' .. 'Z' ) {
+    $shifted{$key}++;
+  }
+
+  for my $hdist ( keys %basic_distances ) {
+    for my $key ( split '', $basic_distances{$hdist} ) {
+      $self->{k}->{$key} = $hdist + $DEPRESS_CONSTANT + ( $shifted{$key} ? $SHIFT_DISTANCE : 0 );
+    }
+  }
 
   return $self;
 }
