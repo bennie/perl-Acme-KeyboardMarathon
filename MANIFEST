@@ -2,9 +2,10 @@ Changes
 lib/ACME/KeyboardMarathon.pm
 Makefile.PL
 MANIFEST
+marathon.pl
+META.yml
 README
 t/01-load.t
 t/02-fox.t
 t/03-cursing.t
-marathon.pl
-META.yml
+TODO
