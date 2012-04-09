@@ -117,9 +117,9 @@ diacritics later, so I can feel better while still ignoring UTF's existance.
 
   use ACME::KeyboardMarathon;    
 
-  my $km = new ACME::KeyboardMarathon;
+  my $akm = new ACME::KeyboardMarathon;
 
-  my $distance_in_cm = $km->distance($bigtext);
+  my $distance_in_cm = $akm->distance($bigtext);
 
 =head1 AUTHORSHIP:
 
