@@ -1,8 +1,15 @@
-name: ACME-KeyboardMarathon
 abstract: How far have your fingers ran?
-author: Phil Pollard <bennie@cpan.org>
+author:
+  Phil Pollard <bennie@cpan.org>
+  Efrain Klein <efrain.klein@gmail.com>
+distribution_type: module
+name: ACME-KeyboardMarathon
+generated_by: Phil Pollard <bennie@cpan.org>
+license: perl
+meta-spec:
+  version: 1.2
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+resources:
+  license: http://dev.perl.org/licenses/
 version: VERSIONTAG
 version_from: lib/ACME/LeyboardMarathon.pm
-license: perl
-distribution_type: module
-generated_by: Phil Pollard <bennie@cpan.org>
