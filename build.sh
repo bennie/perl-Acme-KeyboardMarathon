@@ -1,11 +1,11 @@
 #!/bin/sh
 set -e
 
-MODULE='lib/Tkx/Login.pm'
+MODULE='lib/ACME/KeyboardMarathon.pm'
 VERSION=`cvs status $MODULE | grep Working | awk '{ print $3 }' | tr '.' ' ' | awk '{ printf "%d.%02d", $1, $2 }'`
 DATE=`date '+%Y/%m/%d'`
 YEAR=`date '+%Y'`
-TARDIR="Tkx-Login-$VERSION";
+TARDIR="ACME-KeyboardMarathon-$VERSION";
 
 echo
 echo "Module  : $MODULE"
