@@ -6,7 +6,8 @@ Revision history for Perl extension ACME::KeyboardMarathon.
 
 VERSIONTAG  DATETAG
 
-	Corrected a quoting mistake.	
+	Corrected a quoting mistake.
+	Corrected values on tests due to quoting mistake.
 	Now warning, instead of exiting on bad chars.
 	Using Carp.
 	Removed an unused var.
