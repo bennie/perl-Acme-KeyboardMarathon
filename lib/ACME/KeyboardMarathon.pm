@@ -27,7 +27,7 @@ sub new {
   );
 
   my %shifted; # lookup hash to see if a key is shifted
-  for my $key ( split '', /!@#$%^&*()_+<>?:"{}|~'/ . join('','A'..'Z') ) {
+  for my $key ( split '', '!@#$%^&*()_+<>?:"{}|~\'' . join('','A'..'Z') ) {
     $shifted{$key}++;
   }
 

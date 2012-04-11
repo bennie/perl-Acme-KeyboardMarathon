@@ -7,3 +7,5 @@ Revision history for Perl extension ACME::KeyboardMarathon.
 VERSIONTAG  DATETAG
 
 	Now warning on bad characters. Not using die().
+
+	Corrected a quoting mistake.
