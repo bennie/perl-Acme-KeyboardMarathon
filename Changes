@@ -10,7 +10,8 @@ VERSIONTAG  DATETAG
 	Now warning, instead of exiting on bad chars.
 	Using Carp.
 	Removed an unused var.
-	Corrected spelling mistakes in the POD.
+	Corrected spelling and format mistakes in the POD.
+	Added info on marathon.pl to the POD.
 	Added RCS data.
 	Added warnings.
 	And several other cleanups from Perl::Critic

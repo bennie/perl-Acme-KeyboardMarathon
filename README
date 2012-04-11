@@ -2,53 +2,58 @@
      ACME::KeyboardMarathon - How far have your fingers ran? - v VERSIONTAG
 
 ================================================================================
-SYNOPSIS:
+ SYNOPSIS
 ================================================================================
 
-  ACME::KeyboardMarathon will calculate the approximate distance travelled by
-  fingers to type a given string of text.
+  use ACME::KeyboardMarathon;    
 
-  This is useful to see just how many meter/miles/marathons your fingers have
-  run for you for your latest piece of code or writing.
+  my $akm = new ACME::KeyboardMarathon;
 
-================================================================================
-INSTALLATION:
-================================================================================
+  my $distance_in_cm = $akm->distance($bigtext);
 
-    To install this module type the following:
+NB: Included in this distribution is an example script (marathon.pl) that can
+be used to calculate distance from files provided as arguments:
 
-       perl Makefile.PL
-       make
-       make test
-       make install
+  $> ./marathon.pl foo.txt bar.txt baz.txt
+  114.05 m
 
 ================================================================================
-METHODOLOGY:
+ DESCRIPTION
 ================================================================================
 
-  In proper typing, for all but the "home row" letters, our fingers must travel
-  a short horizontal distance to reach the key. For all keys, there is also a
-  short distance to press the key downward. 
+ACME::KeyboardMarathon will calculate the approximate distance traveled by
+fingers to type a given string of text.
 
-  Measurements were take on a standard-layout IBM type-M keyboard to the nearest 
-  1/3rd of a centimeter for both horizontal and vertical (key depth) travel
-  by the finger.
-
-  Additionally, use of the shift key was tracked and its distance was included
-  for each calculation.
-
-  This produces an index of "distance travelled" for each possible keypress,
-  which is then used to calculate the "total distance travelled" for a given
-  piece of text.
+This is useful to see just how many meter/miles/marathons your fingers have
+run for you for your latest piece of code or writing.
 
 ================================================================================
-DEFICIENCIES:
+ METHODOLOGY
+================================================================================
+
+In proper typing, for all but the "home row" letters, our fingers must travel
+a short horizontal distance to reach the key. For all keys, there is also a
+short distance to press the key downward. 
+
+Measurements were take on a standard-layout IBM type-M keyboard to the nearest 
+1/3rd of a centimeter for both horizontal and vertical (key depth) travel
+by the finger.
+
+Additionally, use of the shift key was tracked and its distance was included
+for each calculation.
+
+This produces an index of "distance traveled" for each possible key-press, 
+which is then used to calculate the "total distance traveled" for a given
+piece of text.
+
+================================================================================
+ BUGS AND LIMITATIONS
 ================================================================================
 
 * This module calculates the linear distance traversed by adding vertical 
   and horizontal motion of the finger. The motion traversed is actually an 
   arc, and while that calculation would be more accurate, this is an 
-  ACME module, afterall. Send me a patch with the right math if you're bored.
+  ACME module, after all. Send me a patch with the right math if you're bored.
 
 * A QWERTY keyboard is assume. DVORAK people are thus left out in the cold. 
   As they should be. The freaks.
@@ -57,7 +62,7 @@ DEFICIENCIES:
   Mac keyboard folks are actually doing more work than they're credited for. 
   But I'm ok with that.
 
-* I assume you actually use standard homerow position. Just like Mavis Beacon 
+* I assume you actually use standard home row position. Just like Mavis Beacon 
   told you to.
 
 * I assume you return to home row after each stroke and don't take shortcuts to
@@ -74,28 +79,28 @@ DEFICIENCIES:
 
 * I am a horrible American barbarian and have only bothered with the keys that
   show up on my American barbarian keyboard. I'll add the LATIN-1 things with 
-  diacritics later, so I can feel better while still ignoring UTF's existance.
+  diacritics later, so I can feel better while still ignoring UTF's existence.
 
 ================================================================================
-USAGE:
+ AUTHOR
 ================================================================================
 
-  use ACME::KeyboardMarathon;    
+Efrain Klein <efrain.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
 
-  my $akm = new ACME::KeyboardMarathon;
-
-  my $distance_in_cm = $akm->distance($bigtext);
+As much as I wish I could be fully blamed for this, I must admit that
+Mr. Efrain Klein came up with the awesome idea, took the time to make the
+measurements, and wrote the original code in Python. I just made sure it 
+was less readable, in Perl.
 
 ================================================================================
-AUTHORSHIP:
+ VERSION
 ================================================================================
-
-  As much as I wish I could be fully blamed for this, I must admit that
-  Mr. Efrain Klein came up with the awesome idea, took the time to make the
-  measurements, and wrote the original code in Python. I just made sure it 
-  was less readable, in Perl.
 
   ACME::KeyboardMarathon vVERSIONTAG DATETAG
+  
+================================================================================
+ LICENSE AND COPYRIGHT
+================================================================================
   
   (c) 2012, Efrain Klein <efrain.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
   Released under the Perl Artistic License
