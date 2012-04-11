@@ -1,4 +1,4 @@
-# $Id: KeyboardMarathon.pm,v 1.12 2012/04/11 18:17:28 cvs Exp $
+# $Id: KeyboardMarathon.pm,v 1.11 2012/04/11 18:16:01 cvs Exp $
 # $Source: /opt/cvs/repository/perl-ACME-KeyboardMarathon/lib/ACME/KeyboardMarathon.pm,v $
 
 package ACME::KeyboardMarathon;
@@ -95,8 +95,8 @@ by the finger.
 Additionally, use of the shift key was tracked and its distance was included
 for each calculation.
 
-This produces an index of "distance traveled" for each possible key-press, 
-which is then used to calculate the "total distance traveled" for a given
+This produces an index of "distance travelled" for each possible key-press, 
+which is then used to calculate the "total distance travelled" for a given
 piece of text.
 
 =head1 BUGS AND LIMITATIONS
