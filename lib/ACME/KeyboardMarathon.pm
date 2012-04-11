@@ -1,6 +1,4 @@
-# $Id: KeyboardMarathon.pm,v 1.10 2012/04/11 18:12:37 cvs Exp $
-# $Revision: 1.10 $
-# $Date: 2012/04/11 18:12:37 $
+# $Id: KeyboardMarathon.pm,v 1.12 2012/04/11 18:17:28 cvs Exp $
 # $Source: /opt/cvs/repository/perl-ACME-KeyboardMarathon/lib/ACME/KeyboardMarathon.pm,v $
 
 package ACME::KeyboardMarathon;
@@ -78,7 +76,7 @@ ACME::KeyboardMarathon - How far have your fingers ran?
 
 =head1 DESCRIPTION
 
-ACME::KeyboardMarathon will calculate the approximate distance travelled by
+ACME::KeyboardMarathon will calculate the approximate distance traveled by
 fingers to type a given string of text.
 
 This is useful to see just how many meter/miles/marathons your fingers have
@@ -97,8 +95,8 @@ by the finger.
 Additionally, use of the shift key was tracked and its distance was included
 for each calculation.
 
-This produces an index of "distance travelled" for each possible key-press, 
-which is then used to calculate the "total distance travelled" for a given
+This produces an index of "distance traveled" for each possible key-press, 
+which is then used to calculate the "total distance traveled" for a given
 piece of text.
 
 =head1 BUGS AND LIMITATIONS
