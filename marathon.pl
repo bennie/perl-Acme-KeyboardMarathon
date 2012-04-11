@@ -11,6 +11,7 @@ the command line as arguments and it returns the total distance.
 
 use ACME::KeyboardMarathon;
 use strict;
+use warnings;
 
 my $akm = new ACME::KeyboardMarathon;
 
