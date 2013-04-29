@@ -1,10 +1,14 @@
 Revision history for Perl extension ACME::KeyboardMarathon.
 
-1.07  2012/04/09
+VERSIONTAG  DATETAG
+
+	POD corrections from Mark A. Smith. (jprogrammer082@gmail.com)
+
+1.13  2012/04/11
 
 	Initial module creation.
 
-VERSIONTAG  DATETAG
+1.07  2012/04/09
 
 	Corrected a quoting mistake.
 	Corrected values on tests due to quoting mistake.

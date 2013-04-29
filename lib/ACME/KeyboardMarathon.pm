@@ -1,6 +1,3 @@
-# $Id: KeyboardMarathon.pm,v 1.13 2012/04/11 18:27:01 cvs Exp $
-# $Source: /opt/cvs/repository/perl-ACME-KeyboardMarathon/lib/ACME/KeyboardMarathon.pm,v $
-
 package ACME::KeyboardMarathon;
 
 use Carp;
@@ -50,7 +47,7 @@ sub distance {
   my $self = shift @args;
   my $distance = 0;
   while ( my $chunk = shift @args ) {
-    croak "FAR OUT! A REFRENCE: $chunk" if ref $chunk;
+    croak "FAR OUT! A REFERENCE: $chunk" if ref $chunk;
     for my $char ( split '', $chunk ) {
       carp "WHOAH! I DON'T KNOW WHAT THIS IS: [$char]\n" and next unless defined $self->{k}->{$char};
       $distance += $self->{k}->{$char};
@@ -83,10 +80,10 @@ be used to calculate distance from files provided as arguments:
 =head1 DESCRIPTION
 
 ACME::KeyboardMarathon will calculate the approximate distance traveled by
-fingers to type a given string of text.
+your fingers to type a given string of text.
 
 This is useful to see just how many meter/miles/marathons your fingers have
-run for you for your latest piece of code or writing.
+ran for you to type your latest piece of code or writing.
 
 =head1 METHODOLOGY
 
@@ -112,7 +109,7 @@ and horizontal motion of the finger. The motion traversed is actually an
 arc, and while that calculation would be more accurate, this is an 
 ACME module, after all. Send me a patch with the right math if you're bored.
 
-* A QWERTY keyboard is assume. DVORAK people are thus left out in the cold. 
+* A QWERTY keyboard is assumed. DVORAK people are thus left out in the cold. 
 As they should be. The freaks.
 
 * I assume there are no gaps between your keys. This means all those stylish 
@@ -128,11 +125,11 @@ the next key. Lazy typists!
 * I assume that you never make mistakes and never use backspaces while typing.
 We're all perfect, yes?
 
-* I assume that you do not type via the use if copy and paste. Especially, not
-using copy and paste from google. Right? RIGHT?!?!??
+* I assume that you do not type via the use of copy and paste. Especially not
+using copy and paste from Google. Right? RIGHT?!?!??
 
 * I'VE NEVER HEARD OF CAPS LOCK. YOU PRESSED THAT SHIFT KEY AND RETURNED TO 
-HOME ROW FOR EVERY CAPITAL LETTER!!1!!one!
+HOME ROW FOR EVERY CAPITAL LETTER!!!!!!!
 
 * I am a horrible American barbarian and have only bothered with the keys that
 show up on my American barbarian keyboard. I'll add the LATIN-1 things with 
@@ -147,11 +144,15 @@ Mr. Efrain Klein came up with the awesome idea, took the time to make the
 measurements, and wrote the original code in Python. I just made sure it 
 was less readable, in Perl.
 
+Additional patches from Mark A. Smith. <jprogrammer082@gmail.com>
+
 =head1 VERSION
 
   ACME::KeyboardMarathon vVERSIONTAG DATETAG
   
 =head1 LICENSE AND COPYRIGHT
   
-  (c) 2012, Efrain Klein <efrain.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
+  (c) 2012-2013, Efrain Klein <efrain.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
   Released under the Perl Artistic License
+
+
