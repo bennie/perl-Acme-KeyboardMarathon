@@ -8,12 +8,12 @@ my $text = 'The ~`@#$, %^&*(, ={}|[], ?,./ fox jumps over the )-_+, \:";\'<>, do
 my $km = new ACME::KeyboardMarathon;
 my $dist = $km->distance($text);
 
-#print "\n $dist == 210.85 \n";
+print "# Should be: $dist == 210.85 \n" unless ( $dist == 210.85 );
 ok( $dist == 210.85 ); 
 
 $text = " \t\n";
 $km = new ACME::KeyboardMarathon;
 $dist = $km->distance($text);
 
-#print "\n $dist == 7.05 \n";
+print "# Should be: $dist == 7.05 \n" unless ( $dist == 7.05 );
 ok( $dist == 7.05 );
