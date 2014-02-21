@@ -138,7 +138,7 @@ diacritics later, so I can feel better while still ignoring UTF's existence.
 
 =head1 BUGS AND SOURCE
 
-	Bug tracking for this module: https://rt.cpan.org/Ticket/Display.html?id=?????
+	Bug tracking for this module: https://rt.cpan.org/Dist/Display.html?Name=ACME-KeyboardMarathon
 
 	Source hosting: http://www.github.com/bennie/perl-ACME-KeyboardMarathon
 
