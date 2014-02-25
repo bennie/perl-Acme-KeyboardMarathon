@@ -1,15 +1,35 @@
-abstract: How far have your fingers ran?
+--- #YAML:1.0
+name:       ACME-KeyboardMarathon
+version:    VERSIONTAG
+abstract:   How far have your fingers ran?
 author:
-  Phil Pollard <bennie@cpan.org>
-  Efrain Klein <efrain.klein@gmail.com>
-distribution_type: module
-name: ACME-KeyboardMarathon
-generated_by: Phil Pollard <bennie@cpan.org>
-license: perl
-meta-spec:
-  version: 1.2
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+    - Phil Pollard <bennie@cpan.org>
+    - Efrain Klein <efrain.klein@gmail.com>
+license:            artistic_2
+distribution_type:  module
+configure_requires:
+    ExtUtils::MakeMaker:  0
+build_requires:
+    ExtUtils::MakeMaker:  0
+requires:
+    perl:               5.008001
+    Test::Simple:       0
 resources:
-  license: http://dev.perl.org/licenses/
-version: VERSIONTAG
-version_from: lib/ACME/LeyboardMarathon.pm
+    bugtracker:
+        web:  https://rt.cpan.org/Dist/Display.html?Name=ACME-KeyboardMarathon
+    repository:
+        type:  git
+        url:   git://github.com/bennie/perl-ACME-KeyboardMarathon.git
+        web:   http://github.com/bennie/perl-ACME-KeyboardMarathon
+no_index:
+    directory:
+        - t
+        - inc
+provides:
+    ACME::KeyboardMarathon:
+        file: lib/ACME/KeyboardMarathon.pm
+        version: VERSIONTAG
+generated_by:       ExtUtils::MakeMaker version 6.56
+meta-spec:
+    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
+    version:  1.4
