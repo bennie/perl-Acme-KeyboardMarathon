@@ -3,8 +3,8 @@ use strict;
 
 BEGIN { plan tests => 2 };
 
-use ACME::KeyboardMarathon;
+use Acme::KeyboardMarathon;
 ok(1); 
 
-my $km = new ACME::KeyboardMarathon;
+my $km = new Acme::KeyboardMarathon;
 ok( defined $km );

@@ -1,5 +1,5 @@
 --- #YAML:1.0
-name:       ACME-KeyboardMarathon
+name:       Acme-KeyboardMarathon
 version:    VERSIONTAG
 abstract:   How far have your fingers ran?
 author:
@@ -13,21 +13,22 @@ build_requires:
     ExtUtils::MakeMaker:  0
 requires:
     perl:               5.008001
+    Carp:               0
     Test::Simple:       0
 resources:
     bugtracker:
-        web:  https://rt.cpan.org/Dist/Display.html?Name=ACME-KeyboardMarathon
+        web:  https://rt.cpan.org/Dist/Display.html?Name=Acme-KeyboardMarathon
     repository:
         type:  git
-        url:   git://github.com/bennie/perl-ACME-KeyboardMarathon.git
-        web:   http://github.com/bennie/perl-ACME-KeyboardMarathon
+        url:   git://github.com/bennie/perl-Acme-KeyboardMarathon.git
+        web:   http://github.com/bennie/perl-Acme-KeyboardMarathon
 no_index:
     directory:
         - t
         - inc
 provides:
-    ACME::KeyboardMarathon:
-        file: lib/ACME/KeyboardMarathon.pm
+    Acme::KeyboardMarathon:
+        file: lib/Acme/KeyboardMarathon.pm
         version: VERSIONTAG
 generated_by:       ExtUtils::MakeMaker version 6.56
 meta-spec:

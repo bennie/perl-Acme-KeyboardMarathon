@@ -2,18 +2,18 @@
 
 =head2 marathon.pl
 
-Example usage of the ACME::KeyboardMarathon module. Just give it filename(s) on 
+Example usage of the Acme::KeyboardMarathon module. Just give it filename(s) on 
 the command line as arguments and it returns the total distance.
 
   $> ./marathon.pl foo.txt bar.txt baz.txt
 
 =cut
 
-use ACME::KeyboardMarathon;
+use Acme::KeyboardMarathon;
 use strict;
 use warnings;
 
-my $akm = new ACME::KeyboardMarathon;
+my $akm = new Acme::KeyboardMarathon;
 
 our @ARGV;
 my $total = 0;

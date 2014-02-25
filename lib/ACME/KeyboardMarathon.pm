@@ -1,4 +1,4 @@
-package ACME::KeyboardMarathon;
+package Acme::KeyboardMarathon;
 
 use Carp;
 
@@ -11,7 +11,7 @@ sub new {
   my $self = {};
   bless($self,$class);
 
-  our $VERSION = 'VERSIONTAG';
+  $Acme::KeyboardMarathon::VERSION = 'VERSIONTAG';
 
   # all measures in cm
 
@@ -62,13 +62,13 @@ __END__
 
 =head1 NAME
 
-ACME::KeyboardMarathon - How far have your fingers ran?
+Acme::KeyboardMarathon - How far have your fingers ran?
 
 =head1 SYNOPSIS
 
-  use ACME::KeyboardMarathon;    
+  use Acme::KeyboardMarathon;    
 
-  my $akm = new ACME::KeyboardMarathon;
+  my $akm = new Acme::KeyboardMarathon;
 
   my $distance_in_cm = $akm->distance($bigtext);
 
@@ -80,7 +80,7 @@ be used to calculate distance from files provided as arguments:
 
 =head1 DESCRIPTION
 
-ACME::KeyboardMarathon will calculate the approximate distance traveled by
+Acme::KeyboardMarathon will calculate the approximate distance traveled by
 your fingers to type a given string of text.
 
 This is useful to see just how many meter/miles/marathons your fingers have
@@ -108,7 +108,7 @@ piece of text.
 * This module calculates the linear distance traversed by adding vertical 
 and horizontal motion of the finger. The motion traversed is actually an 
 arc, and while that calculation would be more accurate, this is an 
-ACME module, after all. Send me a patch with the right math if you're bored.
+Acme module, after all. Send me a patch with the right math if you're bored.
 
 * A QWERTY keyboard is assumed. DVORAK people are thus left out in the cold. 
 As they should be. The freaks.
@@ -138,13 +138,13 @@ diacritics later, so I can feel better while still ignoring UTF's existence.
 
 =head1 BUGS AND SOURCE
 
-	Bug tracking for this module: https://rt.cpan.org/Dist/Display.html?Name=ACME-KeyboardMarathon
+	Bug tracking for this module: https://rt.cpan.org/Dist/Display.html?Name=Acme-KeyboardMarathon
 
-	Source hosting: http://www.github.com/bennie/perl-ACME-KeyboardMarathon
+	Source hosting: http://www.github.com/bennie/perl-Acme-KeyboardMarathon
 
 =head1 VERSION
 
-	ACME::KeyboardMarathon vVERSIONTAG (DATETAG)
+	Acme::KeyboardMarathon vVERSIONTAG (DATETAG)
 
 =head1 COPYRIGHT
 

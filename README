@@ -1,13 +1,13 @@
 
-     ACME::KeyboardMarathon - How far have your fingers ran? - vVERSIONTAG
+     Acme::KeyboardMarathon - How far have your fingers ran? - vVERSIONTAG
 
 ================================================================================
  SYNOPSIS
 ================================================================================
 
-  use ACME::KeyboardMarathon;    
+  use Acme::KeyboardMarathon;    
 
-  my $akm = new ACME::KeyboardMarathon;
+  my $akm = new Acme::KeyboardMarathon;
 
   my $distance_in_cm = $akm->distance($bigtext);
 
@@ -21,7 +21,7 @@ be used to calculate distance from files provided as arguments:
  DESCRIPTION
 ================================================================================
 
-ACME::KeyboardMarathon will calculate the approximate distance traveled by
+Acme::KeyboardMarathon will calculate the approximate distance traveled by
 your fingers to type a given string of text.
 
 This is useful to see just how many meter/miles/marathons your fingers have
@@ -53,7 +53,7 @@ piece of text.
 * This module calculates the linear distance traversed by adding vertical 
   and horizontal motion of the finger. The motion traversed is actually an 
   arc, and while that calculation would be more accurate, this is an 
-  ACME module, after all. Send me a patch with the right math if you're bored.
+  Acme module, after all. Send me a patch with the right math if you're bored.
 
 * A QWERTY keyboard is assumed. DVORAK people are thus left out in the cold.
   As they should be. The freaks.
@@ -98,7 +98,7 @@ Additional patches from Mark A. Smith. <jprogrammer082@gmail.com>
  VERSION
 ================================================================================
 
-  ACME::KeyboardMarathon vVERSIONTAG DATETAG
+  Acme::KeyboardMarathon vVERSIONTAG DATETAG
   
 ================================================================================
  LICENSE AND COPYRIGHT
