@@ -1,6 +1,6 @@
 Changes
 LICENSE
-lib/ACME/KeyboardMarathon.pm
+lib/Acme/KeyboardMarathon.pm
 Makefile.PL
 MANIFEST
 marathon.pl

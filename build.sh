@@ -5,7 +5,7 @@ VERSION=`./version.pl`
 BUILD=`./version.pl --build`
 DATE=`date '+%Y/%m/%d'` 
 YEAR=`date '+%Y'`
-TARDIR="ACME-KeyboardMarathon-$VERSION";
+TARDIR="Acme-KeyboardMarathon-$VERSION";
 
 echo
 echo "Version : $VERSION"
