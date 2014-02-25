@@ -2,6 +2,10 @@ Revision history for Perl extension ACME::KeyboardMarathon.
 
 VERSIONTAG  DATETAG
 
+	Correcting "ACME" to "Acme"
+
+1.16  2014/02/25
+
 	Updated meta information
 	Added LICENSE file to distribution
 
