@@ -1,5 +1,5 @@
 
-     ACME::KeyboardMarathon - How far have your fingers ran? - v VERSIONTAG
+     ACME::KeyboardMarathon - How far have your fingers ran? - vVERSIONTAG
 
 ================================================================================
  SYNOPSIS
@@ -104,5 +104,5 @@ Additional patches from Mark A. Smith. <jprogrammer082@gmail.com>
  LICENSE AND COPYRIGHT
 ================================================================================
   
-  (c) 2012-2013, Efrain Klein <efrain.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
-  Released under the Perl Artistic License
+  (c) 2012-YEARDATE, Efrain Klein <efrain.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
+  Released under the Perl Artistic License 2.0
