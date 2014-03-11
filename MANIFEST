@@ -7,6 +7,7 @@ marathon.pl
 META.json
 META.yml
 README
+t/00-pod.t
 t/01-load.t
 t/02-fox.t
 t/03-cursing.t

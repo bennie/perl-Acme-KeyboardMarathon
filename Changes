@@ -2,6 +2,7 @@ Revision history for Perl extension ACME::KeyboardMarathon.
 
 VERSIONTAG  DATETAG
 
+	Added a POD test
 	Automatically building meta data
 
 1.17  2014/02/25
