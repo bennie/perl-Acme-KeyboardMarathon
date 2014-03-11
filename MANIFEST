@@ -4,6 +4,7 @@ lib/Acme/KeyboardMarathon.pm
 Makefile.PL
 MANIFEST
 marathon.pl
+META.json
 META.yml
 README
 t/01-load.t
