@@ -1,7 +1,5 @@
-use Test;
+use Test::Simple tests => 2;
 use strict;
-
-BEGIN { plan tests => 2 };
 
 use Acme::KeyboardMarathon;
 ok(1); 
