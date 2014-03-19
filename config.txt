@@ -10,4 +10,4 @@ $description = $abstract;
 
 $perl_ver = '5.008001';
 
-%requires = ( 'Carp' => 0, 'Test::Simple' => 0, 'Test::More' => 0 );
+%requires = ( 'Carp' => 0, 'Math::BigInt' => 0, 'Test::Simple' => 0, 'Test::More' => 0 );

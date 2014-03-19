@@ -1,6 +1,7 @@
 package Acme::KeyboardMarathon;
 
 use Carp;
+use Math::BigInt;
 
 use warnings;
 use strict;
