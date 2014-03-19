@@ -1,6 +1,8 @@
 package Acme::KeyboardMarathon;
+$Acme::KeyboardMarathon::VERSION = 'VERSIONTAG';
 
 use Carp;
+use Data::Dumper;
 use Math::BigInt;
 
 use warnings;
@@ -12,12 +14,10 @@ sub new {
   my $self = {};
   bless($self,$class);
 
-  $Acme::KeyboardMarathon::VERSION = 'VERSIONTAG';
-
   # all measures in cm
 
-  my $DEPRESS_CONSTANT = '0.25';
-  my $SHIFT_DISTANCE = '2';
+  my $DEPRESS_CONSTANT = 0.25;
+  my $SHIFT_DISTANCE = 2;
 
   my %basic_distances = ( # basic distance traveled horizontally for a key
        '0'   => q{AaSsDdFfJjKkLl;: },
@@ -37,25 +37,30 @@ sub new {
 
   for my $hdist ( keys %basic_distances ) {
     for my $key ( split '', $basic_distances{$hdist} ) {
-      $self->{k}->{$key} = $hdist + $DEPRESS_CONSTANT + ( $shifted{$key} ? $SHIFT_DISTANCE : 0 );
+      $self->{k}->{$key} = 100 * # Storing in 100ths of a CM to avoid floats
+        ( $hdist + $DEPRESS_CONSTANT + ( $shifted{$key} ? $SHIFT_DISTANCE : 0 ) );
     }
   }
 
+  #print Dumper($self->{k});
   return $self;
 }
 
 sub distance {
   my @args = @_;
   my $self = shift @args;
-  my $distance = 0;
+  my $distance = Math::BigInt->bzero();
   while ( my $chunk = shift @args ) {
     croak "FAR OUT! A REFERENCE: $chunk" if ref $chunk;
     for my $char ( split '', $chunk ) {
-      carp "WHOAH! I DON'T KNOW WHAT THIS IS: [$char]\n" and next unless defined $self->{k}->{$char};
+      unless ( defined $self->{k}->{$char} ) {
+        carp "WHOAH! I DON'T KNOW WHAT THIS IS: [$char] assigning it a 2.5 cm distance\n";
+        $self->{k}->{$char} = 2.5 * 100; # 100ths of a CM
+      }
       $distance += $self->{k}->{$char};
     }
   }
-  return $distance;
+  return int( $distance->as_int() / 100 );
 }
 
 1;

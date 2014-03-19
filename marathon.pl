@@ -10,16 +10,20 @@ the command line as arguments and it returns the total distance.
 =cut
 
 use Acme::KeyboardMarathon;
+use Math::BigInt try => 'GMP';
 use strict;
 use warnings;
 
 my $akm = new Acme::KeyboardMarathon;
 
 our @ARGV;
-my $total = 0;
+my $total = Math::BigInt->bzero();
 
 for my $file ( @ARGV ) {
-  print STDERR "Skipping [$file] as it is not a file\n" unless -f $file;
+  print STDERR "Skipping [$file] as it is not a file\n" and next unless -f $file;
+  print STDERR "Skipping [$file] as it is a binary file\n" and next if $file =~ /\.(gif|gz|jpe?g|png|tar)$/o or -B $file;
+  print STDERR "Skipping [$file] as it is likely a git binary file\n" and next if $file =~ /\.git\//;
+  print STDERR "Reading [$file]\n";
   open INFILE, '<', $file;
   while ( my $line = <INFILE> ) {
     $total += $akm->distance($line);
