@@ -10,7 +10,7 @@ the command line as arguments and it returns the total distance.
 =cut
 
 use Acme::KeyboardMarathon;
-use Math::BigInt try => 'GMP';
+use Math::BigInt lib => 'GMP';
 use strict;
 use warnings;
 
