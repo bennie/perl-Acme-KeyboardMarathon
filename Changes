@@ -2,6 +2,11 @@ Revision history for Perl extension ACME::KeyboardMarathon.
 
 VERSIONTAG  DATETAG
 
+	Added \r with a score of 0. Since in unix return is \n and in 
+          windows it is \n and \r combined, the \n score is sufficent.
+
+1.19  2014/03/19
+
 	Converted to Math::BigInt for cross-system compatibility
 	Only returning the integer CM distance
 	Using a 2.5-cm distance on unknown letters
