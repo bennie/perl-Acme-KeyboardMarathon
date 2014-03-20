@@ -20,7 +20,7 @@ sub new {
   my $SHIFT_DISTANCE = 2;
 
   my %basic_distances = ( # basic distance traveled horizontally for a key
-       '0'   => q{AaSsDdFfJjKkLl;: },
+       '0'   => q{AaSsDdFfJjKkLl;: } . "\r",
        '2'   => q{QqWwGgHhEeRrTtYyUuIiOoPpZzXxCcVvNnMm,<>./?'"},
        '4'   => q{]123478905Ii-_!@#$%&*()} . '}' . "\n",
        '4.5' => q{=+},
