@@ -5,6 +5,7 @@ use Carp;
 use Data::Dumper;
 use Math::BigInt;
 
+use integer;
 use warnings;
 use strict;
 
@@ -14,20 +15,20 @@ sub new {
   my $self = {};
   bless($self,$class);
 
-  # all measures in cm
+  # all measures in 100ths of a cm
 
-  my $DEPRESS_CONSTANT = 0.25;
-  my $SHIFT_DISTANCE = 2;
+  my $depress_distance = 25;
+  my $shift_distance = 200;
 
   my %basic_distances = ( # basic distance traveled horizontally for a key
-       '0'   => q{AaSsDdFfJjKkLl;: } . "\r",
-       '2'   => q{QqWwGgHhEeRrTtYyUuIiOoPpZzXxCcVvNnMm,<>./?'"},
-       '4'   => q{]123478905Ii-_!@#$%&*()} . '}' . "\n",
-       '4.5' => q{=+},
-       '2.3' => '[' . '{'. "\t",
-       '3.5' => 'Bb',
-       '5'   => '6^`~',
-       '5.5' => '\\|',
+       '0'   => q{AaSsDdFfJjKkLl;: },
+       '200' => q{QqWwGgHhEeRrTtYyUuIiOoPpZzXxCcVvNnMm,<>./?'"},
+       '400' => q{]123478905Ii-_!@#$%&*()} . '}' . "\n",
+       '450' => q{=+},
+       '230' => '[' . '{'. "\t",
+       '350' => 'Bb',
+       '500' => '6^`~',
+       '550' => '\\|',
   );
 
   my %shifted; # lookup hash to see if a key is shifted
@@ -37,12 +38,11 @@ sub new {
 
   for my $hdist ( keys %basic_distances ) {
     for my $key ( split '', $basic_distances{$hdist} ) {
-      $self->{k}->{$key} = 100 * # Storing in 100ths of a CM to avoid floats
-        ( $hdist + $DEPRESS_CONSTANT + ( $shifted{$key} ? $SHIFT_DISTANCE : 0 ) );
+      $self->{k}->{$key} = ( $hdist + $depress_distance + ( $shifted{$key} ? $shift_distance : 0 ) ) + 0;
     }
   }
 
-  #print Dumper($self->{k});
+  $self->{k}->{"\r"} = 0;
   return $self;
 }
 
@@ -55,12 +55,13 @@ sub distance {
     for my $char ( split '', $chunk ) {
       unless ( defined $self->{k}->{$char} ) {
         carp "WHOAH! I DON'T KNOW WHAT THIS IS: [$char] assigning it a 2.5 cm distance\n";
-        $self->{k}->{$char} = 2.5 * 100; # 100ths of a CM
+        $self->{k}->{$char} = 250;
       }
       $distance += $self->{k}->{$char};
     }
   }
-  return int( $distance->as_int() / 100 );
+  $distance /= 100;
+  return $distance->bstr();
 }
 
 1;

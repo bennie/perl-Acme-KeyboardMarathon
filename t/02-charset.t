@@ -1,5 +1,6 @@
 use Acme::KeyboardMarathon;
-use Test::Simple tests => 104;
+use Data::Dumper;
+use Test::Simple tests => 98;
 use warnings;
 use strict;
 
