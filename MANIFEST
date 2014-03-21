@@ -9,6 +9,8 @@ META.yml
 README
 t/00-pod.t
 t/01-load.t
-t/02-fox.t
-t/03-cursing.t
+t/02-charset.t
+t/03-fox.t
+t/04-wild.t
+t/wild.txt
 TODO
