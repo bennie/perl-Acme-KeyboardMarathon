@@ -1,5 +1,5 @@
 use Acme::KeyboardMarathon;
-use Test::Simple tests => 2;
+use Test::Simple tests => 4;
 use strict;
 
 my $text = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG!";
@@ -13,3 +13,15 @@ $km = new Acme::KeyboardMarathon;
 $dist = $km->distance($text);
 
 ok( $dist == 74, "Should be 74: $dist" ); 
+
+my $text = 'The ~`@#$, %^&*(, ={}|[], ?,./ fox jumps over the )-_+, \:";\'<>, dog.';
+my $km = new Acme::KeyboardMarathon;
+my $dist = $km->distance($text);
+
+ok( $dist == 210, "Should be 210: $dist" ); 
+
+$text = " \t\n";
+$km = new Acme::KeyboardMarathon;
+$dist = $km->distance($text);
+
+ok( $dist == 7, "Should be 7: $dist" );
