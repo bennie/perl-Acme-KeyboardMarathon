@@ -2,10 +2,16 @@ Revision history for Perl extension ACME::KeyboardMarathon.
 
 VERSIONTAG  DATETAG
 
+	Avoiding copying values from @_ on distance
+	Corrected a MANIFEST error
+	Added a longer test using "Call of the Wild" by Jack London
+
+1.20  2014/03/21
+
 	Added \r with a score of 0. Since in unix return is \n and in 
           windows it is \n and \r combined, the \n score is sufficent.
-
-	Moved to interger only math to improve speed.
+	Moved to interger only math to improve speed
+	Added a full charset test
 
 1.19  2014/03/19
 
