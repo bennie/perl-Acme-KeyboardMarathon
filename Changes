@@ -5,6 +5,8 @@ VERSIONTAG  DATETAG
 	Added \r with a score of 0. Since in unix return is \n and in 
           windows it is \n and \r combined, the \n score is sufficent.
 
+	Moved to interger only math to improve speed.
+
 1.19  2014/03/19
 
 	Converted to Math::BigInt for cross-system compatibility
