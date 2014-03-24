@@ -6,13 +6,13 @@ my $text = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG!";
 my $km = new Acme::KeyboardMarathon;
 my $dist = $km->distance($text);
 
-ok( $dist == 146, "Should be 146: $dist" ); 
+ok( $dist == 144, "Should be 146: $dist" ); 
 
 $text = "The quick brown fox jumps over the lazy dog.";
 $km = new Acme::KeyboardMarathon;
 $dist = $km->distance($text);
 
-ok( $dist == 74, "Should be 74: $dist" ); 
+ok( $dist == 72, "Should be 74: $dist" ); 
 
 my $text = 'The ~`@#$, %^&*(, ={}|[], ?,./ fox jumps over the )-_+, \:";\'<>, dog.';
 my $km = new Acme::KeyboardMarathon;

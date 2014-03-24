@@ -20,29 +20,41 @@ sub new {
   my $depress_distance = 25;
   my $shift_distance = 200;
 
-  my %basic_distances = ( # basic distance traveled horizontally for a key
-       '0'   => q{AaSsDdFfJjKkLl;: },
-       '200' => q{QqWwGgHhEeRrTtYyUuIiOoPpZzXxCcVvNnMm,<>./?'"},
-       '400' => q{]123478905Ii-_!@#$%&*()} . '}' . "\n",
-       '450' => q{=+},
-       '230' => '[' . '{'. "\t",
-       '350' => 'Bb',
-       '500' => '6^`~',
-       '550' => '\\|',
-  );
+  # horizontal distances
 
-  my %shifted; # lookup hash to see if a key is shifted
-  for my $key ( split '', '!@#$%^&*()_+<>?:"{}|~\'' . join('','A'..'Z') ) {
-    $shifted{$key}++;
+  $self->{k} = {};
+
+  no warnings 'qw';
+  map { $self->{k}->{$_} = 550 } ( '\\', '|' );
+  map { $self->{k}->{$_} = 500 } ( qw/6 ^ ` ~/ );
+  map { $self->{k}->{$_} = 450 } ( qw/= +/ );
+  map { $self->{k}->{$_} = 400 } ( qw/] 1 2 3 4 7 8 9 0 5 - _ ! @ # $ % & * ( ) }/ );
+  map { $self->{k}->{$_} = 350 } ( qw/B b/ );
+  map { $self->{k}->{$_} = 230 } ( qw/[ {/ );
+  map { $self->{k}->{$_} = 200 } ( qw/Q q W w G g H h E e R r T t Y y U u I i O o P p Z z X x C c V v N n M m , < > . \/ ? ' "/ );
+  map { $self->{k}->{$_} =   0 } ( qw/A a S s D d F f J j K k L l ; :/ );
+
+  $self->{k}->{"\n"} = 400;
+  $self->{k}->{"\t"} = 230;
+  $self->{k}->{' '}  =   0;
+
+  # Add the depress distance
+  for my $key ( keys %{$self->{k}} ) {
+    $self->{k}->{$key} += $depress_distance;
   }
 
-  for my $hdist ( keys %basic_distances ) {
-    for my $key ( split '', $basic_distances{$hdist} ) {
-      $self->{k}->{$key} = ( $hdist + $depress_distance + ( $shifted{$key} ? $shift_distance : 0 ) ) + 0;
-    }
+  # Add shift distance
+  for my $key ( qw/! @ # $ % ^ & * ( ) _ + < > ? : " { } | ~ '/, 'A' .. 'Z' ) {
+    $self->{k}->{$key} += $shift_distance;
   }
 
-  $self->{k}->{"\r"} = 0;
+  # override
+  $self->{k}->{"\a"} = 0; # alarm
+  $self->{k}->{"\b"} = 0; # backspace
+  $self->{k}->{"\e"} = 0; # escape
+  $self->{k}->{"\f"} = 0; # form feed
+  $self->{k}->{"\r"} = 0; # carriage return
+
   return $self;
 }
 
@@ -54,7 +66,7 @@ sub distance {
     croak "FAR OUT! A REFERENCE: $_[$i]" if ref $_[$i];
     for my $char ( split '', $_[$i] ) {
       unless ( defined $self->{k}->{$char} ) {
-        carp "WHOAH! I DON'T KNOW WHAT THIS IS: [$char] assigning it a 2.5 cm distance\n";
+        carp 'WHOAH! I DON\'T KNOW WHAT THIS IS: [' . sprintf('%2.2x',ord($char)) . " : $char] assigning it a 2.5 cm distance\n";
         $self->{k}->{$char} = 250;
       }
       $distance += $self->{k}->{$char};
