@@ -2,6 +2,11 @@ Revision history for Perl extension ACME::KeyboardMarathon.
 
 VERSIONTAG  DATETAG
 
+	Corrected error where 'i' or 'I' was assigned the wrong value
+	Cleaned the new() method for clarity of distance calculation
+
+1.21  2014/03/21
+
 	Avoiding copying values from @_ on distance
 	Corrected a MANIFEST error
 	Added a longer test using "Call of the Wild" by Jack London
