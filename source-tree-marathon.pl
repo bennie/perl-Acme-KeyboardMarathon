@@ -1,8 +1,6 @@
 #!/usr/bin/perl -Ilib
 
 use Acme::KeyboardMarathon;
-use Cwd;
-use Data::Dumper;
 use DB_File;
 use File::Find;
 use File::Slurp;
@@ -10,9 +8,35 @@ use Math::BigInt lib => 'GMP';
 use strict;
 use warnings;
 
+=head1 source-tree-marathon.pl
+
+This script is designed to recursively crawl a directory of source files 
+to generate a Keyboard-Marathon report for your whole project.
+
+In does it's best to skip binary files. It will not uncompact compressed 
+files.
+
+To conserve ram, it will create a local berkley DB (called 
+"marathon.db") in the current working directory. If you want to run this 
+script on a regular basis this will vastly accelerate calculations as 
+only new and changed files will be processed. (Deleted files will 
+automatically be pruned from the DB and from calculations.)
+
+The report will include the grand total distance, as well as a breakdown by
+file type.
+
+Processing status is presented on STDERR. The report is output on STDOUT. So
+it is very easy to redirect the output to a file:
+
+  %> ./source-tree-marathon.pl /my/source/directory > report.txt
+
+This script requires the following perl modules: File::Find, 
+File::Slurp, Math::BigInt and Acme::KeyboardMarathon
+
+=cut
+
 ### Conf
 
-my $cwd    = getcwd();
 my $dbfile = 'marathon.db';
 
 my $base_dir;
