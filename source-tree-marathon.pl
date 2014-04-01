@@ -1,6 +1,7 @@
 #!/usr/bin/perl -Ilib
 
 use Acme::KeyboardMarathon;
+use Cwd 'abs_path';
 use DB_File;
 use File::Find;
 use File::Slurp;
@@ -42,9 +43,7 @@ my $dbfile = 'marathon.db';
 my $base_dir;
 
 if ( $ARGV[0] and -d $ARGV[0] ) {
-  $base_dir = $ARGV[0];
-  chomp $base_dir;
-  chop $base_dir if $base_dir =~ /[\\\/]$/;
+  $base_dir = abs_path($ARGV[0]);
 }
 
 unless ( $base_dir ) {
