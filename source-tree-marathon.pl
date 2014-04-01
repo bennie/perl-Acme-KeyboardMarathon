@@ -1,6 +1,7 @@
-#!/usr/bin/perl -I/home/phillip/marathon/lib
+#!/usr/bin/perl -Ilib
 
 use Acme::KeyboardMarathon;
+use Cwd;
 use Data::Dumper;
 use DB_File;
 use File::Find;
@@ -11,9 +12,21 @@ use warnings;
 
 ### Conf
 
-my $base_dir = '/home/phillip/marathon/purity';
+my $cwd    = getcwd();
+my $dbfile = 'marathon.db';
 
-my $dbfile = '/home/phillip/marathon/marathon.db';
+my $base_dir;
+
+if ( $ARGV[0] and -d $ARGV[0] ) {
+  $base_dir = $ARGV[0];
+  chomp $base_dir;
+  chop $base_dir if $base_dir =~ /[\\\/]$/;
+}
+
+unless ( $base_dir ) {
+  print STDERR "Usage: ./source-tree-marathon.pl /source/directory/to/crawl\n";
+  exit 1;
+}
 
 ### Constants
 
