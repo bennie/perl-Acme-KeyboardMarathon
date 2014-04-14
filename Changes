@@ -2,6 +2,10 @@ Revision history for Perl extension ACME::KeyboardMarathon.
 
 VERSIONTAG  DATETAG
 
+	Added "source-tree-marathon.pl"
+
+1.22  2014/03/24
+
 	Corrected error where 'i' or 'I' was assigned the wrong value
 	Cleaned the new() method for clarity of distance calculation
 
