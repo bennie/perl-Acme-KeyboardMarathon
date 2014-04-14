@@ -14,9 +14,9 @@ $dist = $km->distance($text);
 
 ok( $dist == 72, "Should be 74: $dist" ); 
 
-my $text = 'The ~`@#$, %^&*(, ={}|[], ?,./ fox jumps over the )-_+, \:";\'<>, dog.';
-my $km = new Acme::KeyboardMarathon;
-my $dist = $km->distance($text);
+$text = 'The ~`@#$, %^&*(, ={}|[], ?,./ fox jumps over the )-_+, \:";\'<>, dog.';
+$km = new Acme::KeyboardMarathon;
+$dist = $km->distance($text);
 
 ok( $dist == 210, "Should be 210: $dist" ); 
 
