@@ -92,6 +92,8 @@ Mr. Efrain Klein came up with the awesome idea, took the time to make the
 measurements, and wrote the original code in Python. I just made sure it 
 was less readable, in Perl.
 
+A significant boost in speed via a patch from James Raspass <jraspass@gmail.com>
+
 Additional patches from Mark A. Smith. <jprogrammer082@gmail.com>
 
 ================================================================================

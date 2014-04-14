@@ -3,6 +3,7 @@ Revision history for Perl extension ACME::KeyboardMarathon.
 VERSIONTAG  DATETAG
 
 	Added "source-tree-marathon.pl"
+	Work from James Raspass <jraspass@gmail.com> that vastly improves speed.
 
 1.22  2014/03/24
 
