@@ -168,7 +168,7 @@ sub check_stats {
 
   print STDERR "(".display($dist).")\n";
 
-  unless ( $add % 100 ) {
+  unless ( $add % 250 ) {
     print STDERR "syncing...\n";
     $ref->sync();
   }
