@@ -60,20 +60,43 @@ sub new {
 
 # split is 2m27.476s for 9.3megs of text (9754400 chars)
 sub distance {
-  my $self = shift @_;
-  my $distance = Math::BigInt->bzero();
+  my $k = shift->{k};
+
+  my $bint = Math::BigInt->bzero;
+  my $int  = 0;
+
   for my $i (0 .. $#_) {
     croak "FAR OUT! A REFERENCE: $_[$i]" if ref $_[$i];
-    for my $char ( split '', $_[$i] ) {
-      unless ( defined $self->{k}->{$char} ) {
-        carp 'WHOAH! I DON\'T KNOW WHAT THIS IS: [' . sprintf('%2.2x',ord($char)) . " : $char] assigning it a 2.5 cm distance\n";
-        $self->{k}->{$char} = 250;
+
+    for ( split '', $_[$i] ) {
+      unless ( defined $k->{$_} ) {
+        carp 'WHOAH! I DON\'T KNOW WHAT THIS IS: [' . sprintf('%2.2x',ord($_)) . " : $_] assigning it a 2.5 cm distance\n";
+
+        $k->{$_} = 250;
       }
-      $distance += $self->{k}->{$char};
+
+      $int += $k->{$_};
+
+      # Hold the value in a native int until it reaches an unsafe limit.
+      # Then add to the BigInt, this avoids repeated slow calls to badd.
+      #
+      # To play it safe, this value is the max signed 32bit int minus
+      # the max distance a key can be (| - 550), i.e.
+      #   2 ** 31 - 551 = 2_147_483_097
+      if ( $int >= 2_147_483_097 ) {
+        $bint->badd($int);
+
+        $int = 0;
+      }
     }
   }
-  $distance /= 100;
-  return $distance->bstr();
+
+  # Add whatever remaining value we have in the native int.
+  $bint->badd($int);
+
+  $bint->bdiv(100);
+
+  return $bint->bstr;
 }
 
 # substr is 2m30.419s
@@ -223,5 +246,7 @@ As much as I wish I could be fully blamed for this, I must admit that
 Mr. Efrain Klein came up with the awesome idea, took the time to make the
 measurements, and wrote the original code in Python. I just made sure it 
 was less readable, in Perl.
+
+A significant boost in speed from patches from James Raspass <jraspass@gmail.com>
 
 Additional patches from Mark A. Smith. <jprogrammer082@gmail.com>
