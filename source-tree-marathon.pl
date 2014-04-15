@@ -118,6 +118,8 @@ for my $file ( keys %data ) {
   $grand_total += $dist;
 }
 
+print "Generated on " . scalar(localtime) . "\n\n";
+
 print "\nGrand total: ", display($grand_total), "\n\nTop 10 distance:\n\n";
 
 my $i = 1;
