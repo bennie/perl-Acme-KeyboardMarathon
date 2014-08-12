@@ -149,8 +149,9 @@ sub check_stats {
   $localdir = $1 if $localdir =~ /^$base_dir\/(.+)$/;
   $skip++ and print STDERR "SKIP: $localdir (directory)\n" and return if $localdir =~ /$skip_dirs_regex/;
 
-  $skip++ and print STDERR "SKIP: $_ (binary)\n" and return if -B $File::Find::name;
+  $skip++ and print STDERR "SKIP: $_ (symlink)\n" and return if -l $File::Find::name;
   $skip++ and print STDERR "SKIP: $_ (zero size)\n" and return if -z $File::Find::name;
+  $skip++ and print STDERR "SKIP: $_ (binary)\n" and return if -B $File::Find::name;
 
   my @stat = stat($File::Find::name);
   my $mtime = $stat[9];
