@@ -90,7 +90,7 @@ my $cache = 0;
 
 find( \&check_stats, $base_dir );
 
-print STDERR "ADD: $add\nCACHE: $cache\nSKIP: $skip\n";
+print STDERR "\nDB Stats:\nADD: $add\nCACHE: $cache\nSKIP: $skip\n";
 
 
 if ( $add ) {

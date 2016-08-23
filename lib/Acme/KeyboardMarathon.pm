@@ -230,7 +230,7 @@ diacritics later, so I can feel better while still ignoring UTF's existence.
 
 =head1 COPYRIGHT
 
-	(c) 2012-YEARTAG, Efrain Klein <efrain.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
+	(c) 2012-YEARTAG, Evelyn Klein <evelykay@gmail.com> & Phillip Pollard <bennie@cpan.org>
 
 =head1 LICENSE
 
@@ -240,10 +240,10 @@ reviewed here: http://opensource.org/licenses/artistic-license-2.0
 
 =head1 AUTHORSHIP
 
-Efrain Klein <efrain.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
+Evelyn Klein <Evelyn.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
 
 As much as I wish I could be fully blamed for this, I must admit that
-Mr. Efrain Klein came up with the awesome idea, took the time to make the
+Mr. Evelyn Klein came up with the awesome idea, took the time to make the
 measurements, and wrote the original code in Python. I just made sure it 
 was less readable, in Perl.
 

@@ -85,10 +85,10 @@ piece of text.
  AUTHOR
 ================================================================================
 
-Efrain Klein <efrain.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
+Evelyn Klein <Evelyn.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
 
 As much as I wish I could be fully blamed for this, I must admit that
-Mr. Efrain Klein came up with the awesome idea, took the time to make the
+Mr. Evelyn Klein came up with the awesome idea, took the time to make the
 measurements, and wrote the original code in Python. I just made sure it 
 was less readable, in Perl.
 
@@ -106,5 +106,5 @@ Additional patches from Mark A. Smith. <jprogrammer082@gmail.com>
  LICENSE AND COPYRIGHT
 ================================================================================
   
-  (c) 2012-YEARDATE, Efrain Klein <efrain.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
+  (c) 2012-YEARDATE, Evelyn Klein <evelykay@gmail.com> & Phillip Pollard <bennie@cpan.org>
   Released under the Perl Artistic License 2.0
