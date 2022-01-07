@@ -211,9 +211,6 @@ and horizontal motion of the finger. The motion traversed is actually an
 arc, and while that calculation would be more accurate, this is an 
 Acme module, after all. Send me a patch with the right math if you're bored.
 
-* A QWERTY keyboard is assumed. DVORAK people are thus left out in the cold. 
-As they should be. The freaks.
-
 * I assume there are no gaps between your keys. This means all those stylish 
 Mac keyboard folks are actually doing more work than they're credited for. 
 But I'm ok with that.
@@ -259,13 +256,16 @@ reviewed here: http://opensource.org/licenses/artistic-license-2.0
 
 =head1 AUTHORSHIP
 
-Evelyn Klein <Evelyn.klein@gmail.com> & Phillip Pollard <bennie@cpan.org>
+Evelyn Klein <evelykay@gmail.com> & Phillip Pollard <bennie@cpan.org>
 
 As much as I wish I could be fully blamed for this, I must admit that
-Mr. Evelyn Klein came up with the awesome idea, took the time to make the
+Mrs. Evelyn Klein came up with the awesome idea, took the time to make the
 measurements, and wrote the original code in Python. I just made sure it 
 was less readable, in Perl.
 
 A significant boost in speed via a patch from James Raspass <jraspass@gmail.com>
 
 Additional patches from Mark A. Smith. <jprogrammer082@gmail.com>
+
+Non-judgemental support for DVORAK keyboards added anonymously by RT user
+'spro^^*%*^6ut#@&$%*c in https://rt.cpan.org/Ticket/Display.html?id=117203
