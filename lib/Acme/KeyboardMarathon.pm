@@ -15,6 +15,14 @@ sub new {
   my $self = {};
   bless($self,$class);
 
+  croak("Odd number of arguments") if @args%2;
+  my %args = @args;
+  my $layout = delete $args{layout} || 'qwerty';
+  croak("Unsupported layout $layout")
+    unless $layout =~ /^(?:qwerty|dvorak)\z/;
+
+  croak "Unknown options: " . join ", ", keys(%args) if keys %args;
+
   # all measures in 100ths of a cm
 
   my $depress_distance = 25;
@@ -33,6 +41,17 @@ sub new {
   map { $self->{k}->{$_} = 230 } ( qw/[ {/ );
   map { $self->{k}->{$_} = 200 } ( qw/Q q W w G g H h E e R r T t Y y U u I i O o P p Z z X x C c V v N n M m , < > . \/ ? ' "/ );
   map { $self->{k}->{$_} =   0 } ( qw/A a S s D d F f J j K k L l ; :/ );
+
+  if ($layout eq 'dvorak') {
+    map { $self->{k}->{$_} = 550 } ( '\\', '|' );
+    map { $self->{k}->{$_} = 500 } ( qw/6 ^ ` ~/ );
+    map { $self->{k}->{$_} = 450 } ( qw/] }/ );
+    map { $self->{k}->{$_} = 400 } ( qw/+ = 1 2 3 4 7 8 9 0 5 [ { ! @ # $ % & * ( )/ );
+    map { $self->{k}->{$_} = 350 } ( qw/X x/ );
+    map { $self->{k}->{$_} = 230 } ( qw/? \// );
+    map { $self->{k}->{$_} = 200 } ( qw/" ' < , I i D d > . P p Y y F f G g C c R r L l : ; Q q J j K k B b M m W w V v Z z - _/ );
+    map { $self->{k}->{$_} =   0 } ( qw/A a O o E e U u H h T t N n S s/ );
+  }
 
   $self->{k}->{"\n"} = 400;
   $self->{k}->{"\t"} = 230;
