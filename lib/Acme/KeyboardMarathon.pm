@@ -118,46 +118,6 @@ sub distance {
   return $bint->bstr;
 }
 
-# substr is 2m30.419s
-#sub distance {
-#  my $self = shift @_;
-#  my $distance = Math::BigInt->bzero();
-#  for my $i (0 .. $#_) {
-#    croak "FAR OUT! A REFERENCE: $_[$i]" if ref $_[$i];
-#    my $length = length($_[$i]) - 1;
-#    for my $s ( 0 .. $length ) {
-#      my $char = substr($_[$i],$s,1);
-#      unless ( defined $self->{k}->{$char} ) {
-#        carp "WHOAH! I DON'T KNOW WHAT THIS IS: [$char] at $s assigning it a 2.5 cm distance\n";
-#        $self->{k}->{$char} = 250;
-#      }
-#      $distance += $self->{k}->{$char};
-#    }
-#  }
-#  $distance /= 100;
-#  return $distance->bstr();
-#}
-
-# Regex is 2m32.690s
-#sub distance {
-#  my $self = shift @_;
-#  my $distance = Math::BigInt->bzero();
-#  for my $i (0 .. $#_) {
-#    croak "FAR OUT! A REFERENCE: $_[$i]" if ref $_[$i];
-#    while ( $_[$i] =~ /(.)/gs ) {
-#      my $char = $1;
-#      unless ( defined $self->{k}->{$char} ) {
-#        carp "WHOAH! I DON'T KNOW WHAT THIS IS: [$char] assigning it a 2.5 cm distance\n";
-#        $self->{k}->{$char} = 250;
-#      }
-#      $distance += $self->{k}->{$char};
-#    }
-#  }
-#  $distance /= 100;
-#  return $distance->bstr();
-#}
-
-
 1;
 __END__
 
