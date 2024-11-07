@@ -6,7 +6,7 @@ MANIFEST
 marathon.pl
 META.json
 META.yml
-README
+README.md
 t/00-pod.t
 t/01-load.t
 t/02-charset.t

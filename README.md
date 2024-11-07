@@ -1,25 +1,26 @@
+# Acme::KeyboardMarathon (vVERSIONTAG)
 
-     Acme::KeyboardMarathon - How far have your fingers ran? - vVERSIONTAG
+How far have your fingers ran?
 
-================================================================================
- SYNOPSIS
-================================================================================
+## Synopsis
 
-  use Acme::KeyboardMarathon;    
+```
+use Acme::KeyboardMarathon;
 
-  my $akm = new Acme::KeyboardMarathon;
+my $akm = new Acme::KeyboardMarathon;
 
-  my $distance_in_cm = $akm->distance($bigtext);
+my $distance_in_cm = $akm->distance($bigtext);
+```
 
 NB: Included in this distribution is an example script (marathon.pl) that can
 be used to calculate distance from files provided as arguments:
 
-  $> ./marathon.pl foo.txt bar.txt baz.txt
-  114.05 m
+```
+$> ./marathon.pl foo.txt bar.txt baz.txt
+114.05 m
+```
 
-================================================================================
- DESCRIPTION
-================================================================================
+## Description
 
 Acme::KeyboardMarathon will calculate the approximate distance traveled by
 your fingers to type a given string of text.
@@ -27,9 +28,7 @@ your fingers to type a given string of text.
 This is useful to see just how many meter/miles/marathons your fingers have
 ran for you to type your latest piece of code or writing.
 
-================================================================================
- METHODOLOGY
-================================================================================
+## Methodology
 
 In proper typing, for all but the "home row" letters, our fingers must travel
 a short horizontal distance to reach the key. For all keys, there is also a
@@ -46,9 +45,7 @@ This produces an index of "distance traveled" for each possible key-press,
 which is then used to calculate the "total distance traveled" for a given
 piece of text.
 
-================================================================================
- BUGS AND LIMITATIONS
-================================================================================
+## Bugs and Limitations
 
 * This module calculates the linear distance traversed by adding vertical 
   and horizontal motion of the finger. The motion traversed is actually an 
@@ -68,8 +65,8 @@ piece of text.
 * I assume that you never make mistakes and never use backspaces while typing.
   We're all perfect, yes?
 
-* I assume that you do not type via the use if copy and paste. Especially not
-  using copy and paste from google. Right? RIGHT?!?!??
+* I assume that you do not type via the use of copy-and-paste. Especially not
+  using copy-and-paste from Stack Overflow. Right? RIGHT?!?!??
 
 * I'VE NEVER HEARD OF CAPS LOCK. YOU PRESSED THAT SHIFT KEY AND RETURNED TO 
   HOME ROW FOR EVERY CAPITAL LETTER!!!!!!!
@@ -78,9 +75,7 @@ piece of text.
   show up on my American barbarian keyboard. I'll add the LATIN-1 things with 
   diacritics later, so I can feel better while still ignoring UTF's existence.
 
-================================================================================
- AUTHOR
-================================================================================
+## Authorship
 
 Evelyn Klein <evelykay@gmail.com> & Phillip Pollard <bennie@cpan.org>
 
@@ -94,17 +89,14 @@ A significant boost in speed via a patch from James Raspass <jraspass@gmail.com>
 Additional patches from Mark A. Smith. <jprogrammer082@gmail.com>
 
 Non-judgemental support for DVORAK keyboards added anonymously by RT user
-'spro^^*%*^6ut#@&$%*c in https://rt.cpan.org/Ticket/Display.html?id=117203
+'spro^^\*%\*^6ut#@&$%\*c in https://rt.cpan.org/Ticket/Display.html?id=117203
 
-================================================================================
- VERSION
-================================================================================
+## Version
 
-  Acme::KeyboardMarathon vVERSIONTAG DATETAG
-  
-================================================================================
- LICENSE AND COPYRIGHT
-================================================================================
-  
-  (c) 2012-YEARDATE, Evelyn Klein <evelykay@gmail.com> & Phillip Pollard <bennie@cpan.org>
-  Released under the Perl Artistic License 2.0
+Acme::KeyboardMarathon vVERSIONTAG DATETAG
+
+## Livense and Copyright
+
+© 2012-YEARDATE, Evelyn Klein <evelykay@gmail.com> & Phillip Pollard <bennie@cpan.org>
+
+Released under the Perl Artistic License 2.0

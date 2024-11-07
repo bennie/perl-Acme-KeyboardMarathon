@@ -224,8 +224,8 @@ the next key. Lazy typists!
 * I assume that you never make mistakes and never use backspaces while typing.
 We're all perfect, yes?
 
-* I assume that you do not type via the use of copy and paste. Especially not
-using copy and paste from Google. Right? RIGHT?!?!??
+* I assume that you do not type via the use of copy-and-paste. Especially not
+using copy-and-paste from Stack Overflow. Right? RIGHT?!?!??
 
 * I'VE NEVER HEARD OF CAPS LOCK. YOU PRESSED THAT SHIFT KEY AND RETURNED TO 
 HOME ROW FOR EVERY CAPITAL LETTER!!!!!!!
